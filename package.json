@@ -15,10 +15,10 @@
     "clean-dist": "npm run remove-dist && mkdir dist",
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm-run-all clean-dist build:html",
-    "build": "babel-node tools/build.js"
+    "build": "babel-node tools/build.js",
+    "postbuild": "babel-node tools/distServer.js"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Toan Nguyen",
   "license": "ISC",
   "devDependencies": {
@@ -61,13 +61,15 @@
     "babel-polyfill": "^6.9.1",
     "bootstrap": "^3.3.7",
     "cheerio": "^0.20.0",
+    "classnames": "^2.2.5",
     "extract-text-webpack-plugin": "^1.0.1",
     "immutability-helper": "^2.0.0",
     "immutable": "^3.8.1",
+    "invariant": "^2.2.1",
     "react": "^15.3.0",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",
-    "react-dnd-touch-backend": "^0.3.1",
+    "react-dnd-touch-backend": "^0.2.7",
     "react-dom": "^15.2.1"
   }
 }

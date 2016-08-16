@@ -15,6 +15,7 @@ const style = {
 const boxSource = {
   beginDrag(props) {
     return {
+		id: props.id,
       name: props.name
     };
   },
@@ -33,6 +34,7 @@ const boxSource = {
 
 @DragSource(ItemTypes.BOX, boxSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
+	connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging()
 }))
 export default class Box extends Component {
@@ -43,16 +45,16 @@ export default class Box extends Component {
   };
 
   render() {
-    const { isDragging, connectDragSource } = this.props;
+    const { isDragging, connectDragSource, connectDragPreview } = this.props;
     const { name } = this.props;
     const opacity = isDragging ? 0.4 : 1;
 
     return (
-      connectDragSource(
+      connectDragSource(connectDragPreview(
         <div style={{ ...style, opacity }}>
           {name}
         </div>
-      )
+      ))
     );
   }
 }

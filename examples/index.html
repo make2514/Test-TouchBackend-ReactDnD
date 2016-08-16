@@ -1,0 +1,61 @@
+<!--
+/**
+ * Copyright 2015, Yahoo Inc.
+ * Copyrights licensed under the MIT License. See the accompanying LICENSE file for terms.
+ */
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                /*overflow: hidden;*/
+            }
+            * {
+                box-sizing: border-box;
+            }
+            .list {
+                list-style-type: none;
+                margin: 0 0 20px 0;
+                padding: 0;
+                position: relative;
+                width: 49%;
+
+                margin-left: 1%;
+                vertical-align: top;
+            }
+
+            .item {
+                padding: 20px;
+                border: 1px solid black;
+                -webkit-user-select: none;  /* Chrome all / Safari all */
+                -moz-user-select: none;     /* Firefox all */
+                -ms-user-select: none;      /* IE 10+ */
+                user-select: none;
+            }
+
+            .item.is-over {
+                border: 1px solid red;
+            }
+
+            #main .item.preview {
+                opacity: 0.8;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main"></div>
+        <script type="text/javascript" src="./main.browserified.js"></script>
+    </body>
+</html>
